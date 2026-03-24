@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Journey — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    .itinerary { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .stop { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .stop-marker { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; margin-top: 2px; }
+    .stop-marker.current { background: var(--gold); color: var(--navy); }
+    .stop-marker.upcoming { background: var(--teal); color: white; }
+    .stop-marker.past { background: var(--sand); color: var(--muted); border: 1.5px solid var(--border); }
+    .stop-info h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.2rem; }
+    .stop-info .stop-date { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .stop-info p { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; max-width: none; margin-bottom: 0; }
+    .status-badge { display: inline-block; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 2px; margin-left: 0.5rem; vertical-align: middle; }
+    .badge-current { background: var(--gold); color: var(--navy); }
+    .badge-upcoming { background: rgba(45,125,138,0.15); color: var(--teal); }
+    .leaflet-popup-content-wrapper { border-radius: 2px; font-family: 'Raleway', sans-serif; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+    .leaflet-popup-content { margin: 14px 18px; }
+    .popup-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #3d3480; margin-bottom: 0.3rem; }
+    .popup-sub { font-size: 0.8rem; color: #8a7ab8; text-transform: uppercase; letter-spacing: 0.08em; }
+    .popup-desc { font-size: 0.88rem; color: #444; margin-top: 0.5rem; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<nav class="nav-horizontal">
+  <a href="index.html"><img src="logo.png" class="nav-logo" alt="Portfolio" /></a>
+  <a href="index.html">The Initiative</a>
+  <a href="artists.html">For Artists</a>
+  <a href="map.html" class="active">The Journey</a>
+  <a href="about.html">The Crew & Alumni</a>
+  <a href="field-notes.html">Field Notes & The Log</a>
+</nav>
+
+<div class="home-photo">
+  <img src="logo.png" alt="Portfolio" class="photo-overlay-logo" />
+</div>
+
+
+<section class="section" style="padding-bottom: 2rem; text-align: center;">
+  <div style="max-width: 680px; margin: 0 auto; text-align: left;">
+    <p>We travel in that same unhurried tradition, moved by wind, shaped by weather, humbled by the distance between one shore and another.</p>
+    <p>Each port is a chapter. Each collaboration, a new voice joining the chorus. The route is planned and also open, because the sea has its own intentions and we have learned to listen.</p>
+    <p>Below you will find our path. The ports we have known and the ones still waiting for us on the horizon. Follow along, find us in your harbor, or simply watch from wherever you are as the poem continues to write itself.</p>
+    <p>We are glad you are here.</p>
+  </div>
+</section>
+
+<div id="map"></div>
+
+<section class="section">
+  <div class="map-legend">
+    <div class="legend-item"><div class="legend-dot current"></div>Current Location</div>
+    <div class="legend-item"><div class="legend-dot planned"></div>Planned Stop</div>
+  </div>
+
+  <div style="margin-top: 3.5rem;">
+    <span class="section-label">2006 Itinerary</span>
+    <h2>Ports of Call</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="itinerary">
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Rome, Italy</h4><p>Where we began. The city of layers — ancient stone, living noise, and Portfolio resting on The Tiber River. Waiting to start our collective tale. Ketil is buzzing with the history of it all.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Isola d'Ischia, Italy</h4><p>A volcanic island in the Tyrrhenian. We are in awe of the adventure, our future and the open waters. The boat is running smoothly and we are nesting. Looking at the old cities from this view is a gift.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Sorrento, Italy</h4><p>Clifftop town above the Bay of Naples. The first time Hala ever saw a pod of dolphins 🐬! They swam and danced with the boat for a bit. A wild blessing for Portfolio's journey.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Night Crossing to Sicilia</h4><p>Stars low and close. The boat finding its way south in the dark. We got to see Stromboli erupting at night!! 🌋</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Castello Ruffo di Scilla, Italy</h4><p>Ancient fortress at the tip of the boot. Waiting to pass through the Strait of Messina. We now have a new dinghy motor as well. Sad for the future buff rowing arms.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Canne, Italy</h4><p>A brief pause along the Calabrian coast. Trying and failing to repair the water boiler, but hey we did laundry!</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Vlorë, Albania</h4><p>Where the Adriatic opens into the Ionian. Finally we exported the boat in time. We can relax and make plans for the route with spaciousness. Sleeping off anchor in a quiet bay for a few days. Ketil watching fish jump about the water. His mom texting us imploring him to catch fish for dinner. Hala making soup against her will, but damn does it taste good.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Durrës, Albania</h4><p>Albania's oldest city, but feels like it is still being built. A massive shipping port lacking any coziness. We rent a car and do chores. They drive wild here. We are happy for heat and power. Ben, our first Residency Artist, boarded Portfolio here for a week long residency!! We pick him up in Tiranë. Excited to activate Portfolio for other artists and friends.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Off Anchor, Southern Montenegro</h4><p>Floating still in a sheltered bay. The mountains rising directly from the sea, unhurried and enormous.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Kotor, Montenegro</h4><p>A medieval walled city at the end of an inland sea. The walls climb the mountain. The cat population is legendary. Ben pets as many cats as he can and even holds a few. Sunrise hike to the top of the city walls on Spring Equinox. Lots of making and thinking aboard the ship.</p></div></div>
+    <div class="stop"><div class="stop-marker current">●</div><div class="stop-info"><div class="stop-date">2026 <span class="status-badge badge-current">Now</span></div><h4>Dubrovnik, Croatia</h4><p>Sleeping off anchor watching limestone walls that meet the Adriatic. Swimming in the cold sea, walking through the old city, getting dramatic drone shots of the boat and dinghy rides into the old port. Ben's final port of call for his Residency.</p></div></div>
+    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">March – Mid-April 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Montenegro</h4><p>Returning to the bay of mountains and still water. Open for applications.</p></div></div>
+    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">April 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Greece</h4><p>The Aegean opens. Light on white walls. The sea that taught the world how to think about beauty. Open for applications.</p></div></div>
+    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">Late April – Early May 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Turkey</h4><p>Where Europe reaches toward Asia across a narrow strip of water. Two worlds visible from a single deck. Open for applications.</p></div></div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html"><img src="logo.png" alt="Portfolio" class="footer-logo" /></a>
+  <p class="footer-tagline">the harbor is our gallery. the sea is your studio.</p>
+  <p class="footer-close"><a href="map.html">find us in the harbor.</a></p>
+</footer>
+
+<script>
+  const map = L.map('map', { center: [37.5, 14.5], zoom: 5, minZoom: 4, maxZoom: 10, scrollWheelZoom: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+  const currentIcon = L.divIcon({ className: '', html: '<div style="width:20px;height:20px;border-radius:50%;background:#f47c68;border:3px solid #5c54c0;box-shadow:0 2px 8px rgba(0,0,0,0.35);"></div>', iconSize: [20,20], iconAnchor: [10,10] });
+  const plannedIcon = L.divIcon({ className: '', html: '<div style="width:14px;height:14px;border-radius:50%;background:#36bcc8;opacity:0.85;box-shadow:0 2px 6px rgba(0,0,0,0.25);"></div>', iconSize: [14,14], iconAnchor: [7,7] });
+  const pastIcon   = L.divIcon({ className: '', html: '<div style="width:12px;height:12px;border-radius:50%;background:#b8a890;border:2px solid #999;"></div>', iconSize: [12,12], iconAnchor: [6,6] });
+  const stops = [
+    { latlng: [41.730, 12.232],  name: 'Rome, Italy',                      date: 'March 2026',               status: 'past',    desc: 'Where we began. The city of layers — ancient stone, living noise, and Portfolio resting on The Tiber River. Waiting to start our collective tale. Ketil is buzzing with the history of it all.' },
+    { latlng: [40.731, 13.900],  name: 'Isola d\'Ischia, Italy',           date: 'March 2026',               status: 'past',    desc: 'A volcanic island in the Tyrrhenian. We are in awe of the adventure, our future and the open waters. The boat is running smoothly and we are nesting. Looking at the old cities from this view is a gift.' },
+    { latlng: [40.627, 14.376],  name: 'Sorrento, Italy',                  date: 'March 2026',               status: 'past',    desc: 'Clifftop town above the Bay of Naples. The first time Hala ever saw a pod of dolphins 🐬! They swam and danced with the boat for a bit. A wild blessing for Portfolio\'s journey.' },
+    { latlng: [38.190, 15.550],  name: 'Night Crossing to Sicilia',        date: 'March 2026',               status: 'past',    desc: 'Stars low and close. The boat finding its way south in the dark. We got to see Stromboli erupting at night!! 🌋' },
+    { latlng: [38.256, 15.716],  name: 'Castello Ruffo di Scilla, Italy',  date: 'March 2026',               status: 'past',    desc: 'Ancient fortress at the tip of the boot. Waiting to pass through the Strait of Messina. We now have a new dinghy motor as well. Sad for the future buff rowing arms.' },
+    { latlng: [38.620, 15.840],  name: 'Canne, Italy',                     date: 'March 2026',               status: 'past',    desc: 'A brief pause along the Calabrian coast. Trying and failing to repair the water boiler, but hey we did laundry!' },
+    { latlng: [40.468, 19.487],  name: 'Vlorë, Albania',                   date: 'March 2026',               status: 'past',    desc: 'Where the Adriatic opens into the Ionian. Finally we exported the boat in time. Sleeping off anchor in a quiet bay for a few days. Ketil watching fish jump about the water. His mom texting us imploring him to catch fish for dinner. Hala making soup against her will, but damn does it taste good.' },
+    { latlng: [41.323, 19.441],  name: 'Durrës, Albania',                  date: 'March 2026',               status: 'past',    desc: 'Albania\'s oldest city, but feels like it is still being built. A massive shipping port. Ben, our first Residency Artist, boarded here for a week long residency!! We pick him up in Tiranë.' },
+    { latlng: [42.100, 18.900],  name: 'Off Anchor, Southern Montenegro',  date: 'March 2026',               status: 'past',    desc: 'Floating still in a sheltered bay. The mountains rising directly from the sea, unhurried and enormous.' },
+    { latlng: [42.424, 18.771],  name: 'Kotor, Montenegro',                date: 'March 2026',               status: 'past',    desc: 'A medieval walled city at the end of an inland sea. The walls climb the mountain. The cat population is legendary. Ben pets as many cats as he can and even holds a few. Sunrise hike to the top of the city walls on Spring Equinox. Lots of making and thinking aboard the ship.' },
+    { latlng: [42.650, 18.094],  name: 'Dubrovnik, Croatia',               date: '2026',                     status: 'current', desc: 'Sleeping off anchor watching limestone walls that meet the Adriatic. Swimming in the cold sea, walking through the old city, dramatic drone shots of the boat and dinghy rides into the old port. Ben\'s final port of call for his Residency.' },
+    { latlng: [42.300, 18.850],  name: 'Montenegro',                       date: 'March – Mid-April 2026',   status: 'planned', desc: 'Returning to the bay of mountains and still water. Open for applications.' },
+    { latlng: [37.942, 23.646],  name: 'Greece',                           date: 'April 2026',               status: 'planned', desc: 'The Aegean opens. Light on white walls. The sea that taught the world how to think about beauty.' },
+    { latlng: [37.000, 27.500],  name: 'Turkey',                           date: 'Late April – Early May 2026', status: 'planned', desc: 'Where Europe reaches toward Asia across a narrow strip of water. Two worlds visible from a single deck.' },
+  ];
+  L.polyline(stops.map(s => s.latlng), { color: '#36bcc8', weight: 2, opacity: 0.45, dashArray: '6 6' }).addTo(map);
+  stops.forEach(stop => {
+    const icon = stop.status === 'current' ? currentIcon : stop.status === 'past' ? pastIcon : plannedIcon;
+    const badge = stop.status === 'current' ? '<span style="display:inline-block;background:#f47c68;color:#5c54c0;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;">Now</span>' : stop.status === 'planned' ? '<span style="display:inline-block;background:rgba(54,188,200,0.15);color:#36bcc8;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;">Upcoming</span>' : '';
+    L.marker(stop.latlng, { icon }).addTo(map).bindPopup(`<div class="popup-title">${stop.name} ${badge}</div><div class="popup-sub">${stop.date}</div><div class="popup-desc">${stop.desc}</div>`, { maxWidth: 260 });
+  });
+</script>
+</body>
+</html>

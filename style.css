@@ -8,7 +8,7 @@
   --sand:   #fde8f2;
   --cream:  #f4f0ff;
   --gold:   #f47c68;
-  --text:   #3d3480;
+  --text:   #100d36;
   --light:  #ffffff;
   --muted:  #8a7ab8;
   --border: rgba(92,84,192,0.14);
@@ -724,7 +724,7 @@ footer strong { color: var(--light); }
   font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--gold);
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }
@@ -759,10 +759,10 @@ footer strong { color: var(--light); }
 .section p.artists-opener {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 1.45rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--gold);
-  line-height: 1.4;
+  line-height: 1.75;
   margin-bottom: 2.5rem;
   max-width: 900px;
   margin-left: auto;

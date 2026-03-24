@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Come Aboard — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('KgL52qCOfKENSdUbJ');</script>
+</head>
+<body>
+
+<nav class="nav-horizontal">
+  <a href="index.html"><img src="logo.png" class="nav-logo" alt="Portfolio" /></a>
+  <a href="index.html">The Initiative</a>
+  <a href="artists.html">For Artists</a>
+  <a href="map.html">The Journey</a>
+  <a href="about.html">The Crew</a>
+  <a href="field-notes.html">Field Notes & The Log</a>
+</nav>
+
+<div class="home-photo">
+  <img src="logo.png" alt="Portfolio" class="photo-overlay-logo" />
+</div>
+
+<section class="section" style="text-align: center;">
+  <p class="come-aboard-opener">This is an invitation before it is an application.</p>
+  <div class="come-aboard-intro">
+    <p>There is a kind of making that requires distance from the familiar. Stepping away from the studio, the city and the known. Moving toward something open, uncertain, alive and as open as the sea and horizon.</p>
+    <p>Portfolio invites artists to live, create and share work aboard our sailing vessel as we journey through the Mediterranean — port by port, community by community, tide by tide.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <span class="section-label">The Residency</span>
+  <h2>What a Residency Looks Like</h2>
+  <div class="divider"></div>
+  <p>You will live aboard Portfolio as a full crew member, sailing between ports while developing work in direct response to the vessel, the sea, and the communities we encounter along the way.</p>
+  <p>Days at sea are yours. We ask only that you engage with the journey — the light, the movement, the people we meet — and that you bring something to share with the public upon arrival into port. Not a finished work necessarily, but an honest one. Something made from the crossing.</p>
+  <p>The length of your residency is something we determine together. Tell us what you need. We are listening.</p>
+  <p class="frame-line closing">The passage is the studio. The arrival is the gift.</p>
+</section>
+
+<section class="section">
+  <span class="section-label">Life Aboard</span>
+  <h2>The Boat Is Small.<br>The Horizon Is Not.</h2>
+  <div class="divider"></div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon">🛏</span>
+      <h3>Your Cabin</h3>
+      <p>A private cabin for the duration of your residency. Shared communal spaces include the saloon, galley, and open deck — all available as studio and exhibition space.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔧</span>
+      <h3>Materials</h3>
+      <p>Artists are encouraged to work with found, natural, or locally sourced materials that respond to the places we visit. We cannot support large scale production. We can support large scale thinking.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🌍</span>
+      <h3>Community</h3>
+      <p>Portfolio opens its decks at every port. As a resident artist you are invited to engage directly with the communities we encounter — to run conversations, lead workshops, share your process.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="apply">
+  <span class="section-label">Apply</span>
+  <h2>We Read Every Application with Care</h2>
+  <div class="divider"></div>
+  <p>There is no application fee. Applications are reviewed on a rolling basis and we aim to respond within four weeks.</p>
+
+  <form id="application-form" style="margin-top: 2.5rem;" onsubmit="handleSubmit(event)">
+    <div class="form-grid">
+      <div class="form-group"><label for="first-name">First Name</label><input type="text" id="first-name" name="first-name" required /></div>
+      <div class="form-group"><label for="last-name">Last Name</label><input type="text" id="last-name" name="last-name" required /></div>
+      <div class="form-group full"><label for="email">Email</label><input type="email" id="email" name="email" required /></div>
+      <div class="form-group"><label for="nationality">Nationality</label><input type="text" id="nationality" name="nationality" /></div>
+      <div class="form-group"><label for="medium">Primary Medium or Practice</label><input type="text" id="medium" name="medium" required placeholder="e.g. ceramics, performance, sound…" /></div>
+      <div class="form-group full"><label for="website">Website, Portfolio or Instagram</label><input type="text" id="website" name="website" placeholder="a link, a handle, or leave blank" /></div>
+      <div class="form-group full">
+        <label for="season">Preferred Season</label>
+        <select id="season" name="season" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="autumn">Autumn</option>
+          <option value="open">Open — flexible</option>
+        </select>
+      </div>
+      <div class="form-group full"><label for="ports">Ports or places that excite you</label><input type="text" id="ports" name="ports" placeholder="Anywhere on the map, or beyond it." /></div>
+      <div class="form-group full"><label for="dream">Tell us about the work you are currently dreaming of making</label><textarea id="dream" name="dream" required placeholder="We are listening." style="min-height: 160px;"></textarea></div>
+      <div class="form-group full"><label for="else">Tell us anything else you feel we should know</label><textarea id="else" name="else" placeholder="Anything at all." style="min-height: 100px;"></textarea></div>
+    </div>
+    <div style="margin-top: 2rem;">
+      <button type="submit" class="btn btn-primary" style="font-size: 0.9rem; padding: 1rem 2.5rem;">Send Your Application</button>
+    </div>
+    <div class="form-success" id="form-success">Thank you. We'll be in touch within four weeks.</div>
+  </form>
+
+  <p class="frame-line closing">Come as you are. Bring your curiosity. The sea will do the rest.</p>
+</section>
+
+<footer>
+  <a href="index.html"><img src="logo.png" alt="Portfolio" class="footer-logo" /></a>
+  <p class="footer-tagline">the harbor is our gallery. the sea is your studio.</p>
+  <p class="footer-close"><a href="map.html">find us in the harbor.</a></p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('application-form');
+  const success = document.getElementById('form-success');
+  const btn = form.querySelector('button[type="submit"]');
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const params = {
+    first_name:  document.getElementById('first-name').value,
+    last_name:   document.getElementById('last-name').value,
+    email:       document.getElementById('email').value,
+    nationality: document.getElementById('nationality').value,
+    medium:      document.getElementById('medium').value,
+    website:     document.getElementById('website').value,
+    season:      document.getElementById('season').value,
+    ports:       document.getElementById('ports').value,
+    dream:       document.getElementById('dream').value,
+    other:       document.getElementById('else').value,
+    message: [
+      'From: ' + document.getElementById('first-name').value + ' ' + document.getElementById('last-name').value,
+      'Email: ' + document.getElementById('email').value,
+      'Nationality: ' + document.getElementById('nationality').value,
+      'Medium / Practice: ' + document.getElementById('medium').value,
+      'Website / Portfolio: ' + document.getElementById('website').value,
+      'Preferred Season: ' + document.getElementById('season').value,
+      'Ports or places that excite them: ' + document.getElementById('ports').value,
+      '',
+      'Work they are dreaming of making:',
+      document.getElementById('dream').value,
+      '',
+      'Anything else:',
+      document.getElementById('else').value,
+    ].join('\n')
+  };
+
+  emailjs.send('service_bi756o9', 'template_wxgz99o', params)
+    .then(function() {
+      form.querySelectorAll('input, textarea, select, button').forEach(el => el.disabled = true);
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    })
+    .catch(function(err) {
+      btn.textContent = 'Send Your Application';
+      btn.disabled = false;
+      alert('Something went wrong — please try again or email us directly at hala.megahy@gmail.com');
+      console.error('EmailJS error:', err);
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stay Close — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav-horizontal">
+  <a href="index.html"><img src="logo.png" class="nav-logo" alt="Portfolio" /></a>
+  <a href="index.html">The Initiative</a>
+  <a href="artists.html">For Artists</a>
+  <a href="map.html">The Journey</a>
+  <a href="about.html">The Crew</a>
+  <a href="come-aboard.html">Come Aboard</a>
+  <a href="field-notes.html">Field Notes & The Log</a>
+</nav>
+
+<div class="home-photo">
+  <img src="logo.png" alt="Portfolio" class="photo-overlay-logo" />
+</div>
+
+
+<section class="section">
+  <p class="frame-line">You don't have to be aboard to be part of this.</p>
+  <p>Portfolio moves through the Mediterranean port by port, gathering artists, opening decks, making things that exist once and fully before the tide carries us forward. If you are following from a distance — from a city, a studio, a shore somewhere — we are glad you are here.</p>
+  <p>This journey needs its witnesses as much as it needs its makers.</p>
+
+  <hr class="section-rule" />
+
+  <span class="section-label">Follow the Journey</span>
+  <h2 style="margin-top: 0.8rem; margin-bottom: 1rem;">Word from the Water</h2>
+  <div class="divider"></div>
+  <p>Sign up below and we will send word from the water — dispatches from ports, reflections from residents, news of upcoming exhibitions and gatherings. We write when there is something worth saying. We will not flood your inbox. We move at the speed of the wind, after all.</p>
+
+  <form class="email-form" id="stay-close-form" onsubmit="handleSignup(event)">
+    <input type="email" id="email" name="email" placeholder="your email, and we'll find you" required />
+    <button type="submit" class="btn btn-primary">Stay Close</button>
+  </form>
+  <div class="form-success" id="signup-success">We'll find you on the water. Thank you for staying close.</div>
+
+  <hr class="section-rule" />
+
+  <span class="section-label">Find Us</span>
+  <h2 style="margin-top: 0.8rem; margin-bottom: 1rem;">We Are Also Here</h2>
+  <div class="divider"></div>
+  <p>When the signal allows —</p>
+  <p>Instagram — <em style="color: var(--navy);">[ handle to be added ]</em></p>
+
+  <p class="frame-line closing" style="margin-top: 3rem;">The sea is our address. The horizon, our home.</p>
+  <p class="frame-line" style="margin-top: 0.5rem;">Stay close.</p>
+</section>
+
+<footer>
+  <a href="index.html"><img src="logo.png" alt="Portfolio" class="footer-logo" /></a>
+  <p class="footer-tagline">the harbor is our gallery. the sea is your studio.</p>
+  <p class="footer-close"><a href="map.html">find us in the harbor.</a></p>
+</footer>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const form = document.getElementById('stay-close-form');
+  const success = document.getElementById('signup-success');
+  form.querySelectorAll('input, button').forEach(el => el.disabled = true);
+  success.style.display = 'block';
+}
+</script>
+</body>
+</html>

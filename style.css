@@ -3,7 +3,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:   #5c54c0;
+  --navy:   #3d3490;
   --teal:   #36bcc8;
   --sand:   #fde8f2;
   --cream:  #f4f0ff;
@@ -47,7 +47,7 @@ nav {
 }
 
 .nav-logo-img {
-  height: 38px;
+  height: 50px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -195,15 +195,16 @@ nav {
   width: 100%;
   height: 62vh;
   min-height: 380px;
-  background: url('flowerboat.JPG') center/cover no-repeat;
+  background: url('boat pic_re.V3.jpg') center/cover no-repeat;
   margin-top: 66px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .photo-overlay-logo {
-  height: 90%;
+  height: 110%;
   width: auto;
   opacity: 0.5;
   filter: brightness(0) invert(1);
@@ -306,7 +307,7 @@ nav {
   justify-content: center;
   align-items: flex-start;
   padding: 7rem 6rem 5rem;
-  background: linear-gradient(160deg, rgba(92,84,192,0.30) 0%, rgba(140,60,180,0.22) 52%, rgba(54,188,200,0.18) 100%), url('flowerboat.JPG') center/cover no-repeat;
+  background: linear-gradient(160deg, rgba(92,84,192,0.30) 0%, rgba(140,60,180,0.22) 52%, rgba(54,188,200,0.18) 100%), url('boat pic_re.V3.jpg') center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -405,11 +406,12 @@ nav {
 }
 
 .section-label {
-  font-size: 1rem;
-  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 0.8rem;
   display: block;
   text-align: center;
@@ -459,6 +461,19 @@ nav {
   display: block;
 }
 
+.card-icon-img {
+  display: block;
+  width: calc(100% + 4rem);
+  margin: -2.5rem -2rem 1.5rem -2rem;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-icon-img.community-img {
+  object-position: center top;
+}
+
 .card h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
@@ -486,7 +501,7 @@ nav {
 /* ── PAGE HEADER ── */
 .page-header {
   padding: 9rem 6rem 4rem;
-  background: linear-gradient(160deg, rgba(92,84,192,0.55) 0%, rgba(140,60,180,0.45) 60%, rgba(54,188,200,0.38) 100%), url('flowerboat.JPG') center/cover no-repeat;
+  background: linear-gradient(160deg, rgba(92,84,192,0.55) 0%, rgba(140,60,180,0.45) 60%, rgba(54,188,200,0.38) 100%), url('boat pic_re.V3.jpg') center/cover no-repeat;
 }
 
 .page-header .section-label { display: block; margin-bottom: 1rem; }
@@ -682,7 +697,7 @@ footer strong { color: var(--light); }
 .frame-line {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--muted);
   line-height: 1.75;
   margin-bottom: 2rem;
@@ -722,21 +737,22 @@ footer strong { color: var(--light); }
 
 .artists-closing p {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-style: italic;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--gold);
-  line-height: 1.7;
+  line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 
 /* ── ARTISTS SUBHEAD (same size as opener, dark not orange) ── */
-.artists-subhead {
+h2.artists-subhead {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--navy);
-  line-height: 1.4;
+  color: var(--gold);
+  line-height: 1.3;
   margin-bottom: 2rem;
 }
 
@@ -759,8 +775,8 @@ footer strong { color: var(--light); }
 .section p.artists-opener {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 1.15rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--gold);
   line-height: 1.75;
   margin-bottom: 2.5rem;
@@ -829,11 +845,12 @@ footer strong { color: var(--light); }
 }
 
 .crew-role {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 1.8rem;
 }
 
@@ -858,11 +875,12 @@ footer strong { color: var(--light); }
 }
 
 .log-meta {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
   font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 0.8rem;
 }
 
@@ -932,7 +950,7 @@ footer strong { color: var(--light); }
 .img-divider {
   width: 100%;
   height: 300px;
-  background: url('flowerboat.JPG') center/cover no-repeat;
+  background: url('boat pic_re.V3.jpg') center/cover no-repeat;
   opacity: 0.65;
 }
 

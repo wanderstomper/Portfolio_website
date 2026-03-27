@@ -14,13 +14,18 @@
   --border: rgba(92,84,192,0.14);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   font-family: 'Raleway', sans-serif;
   background: var(--cream);
   color: var(--text);
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 /* ── NAV ── */
@@ -882,6 +887,8 @@ h2.artists-subhead {
   font-weight: 700;
   font-family: 'Raleway', sans-serif;
   margin-bottom: 0.8rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .log-entry h3 {

@@ -16,14 +16,12 @@
     .stop { display: flex; gap: 1.2rem; align-items: flex-start; }
     .stop-marker { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; margin-top: 2px; }
     .stop-marker.current { background: var(--gold); color: var(--navy); }
-    .stop-marker.upcoming { background: var(--teal); color: white; }
     .stop-marker.past { background: var(--sand); color: var(--muted); border: 1.5px solid var(--border); }
     .stop-info h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.2rem; }
     .stop-info .stop-date { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
     .stop-info p { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; max-width: none; margin-bottom: 0; }
     .status-badge { display: inline-block; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 2px; margin-left: 0.5rem; vertical-align: middle; }
     .badge-current { background: var(--gold); color: var(--navy); }
-    .badge-upcoming { background: rgba(45,125,138,0.15); color: var(--teal); }
     .leaflet-popup-content-wrapper { border-radius: 2px; font-family: 'Raleway', sans-serif; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
     .leaflet-popup-content { margin: 14px 18px; }
     .popup-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #3d3480; margin-bottom: 0.3rem; }
@@ -61,7 +59,7 @@
 <section class="section">
   <div class="map-legend">
     <div class="legend-item"><div class="legend-dot current"></div>Current Location</div>
-    <div class="legend-item"><div class="legend-dot planned"></div>Planned Stop</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#b8a890;border:2px solid #999;width:12px;height:12px;border-radius:50%;"></div>Visited</div>
   </div>
 
   <div style="margin-top: 3.5rem;">
@@ -83,13 +81,15 @@
     <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Kotor, Montenegro</h4><p>A medieval walled city at the end of an inland sea. The walls climb the mountain. The cat population is legendary. Ben pets as many cats as he can and even holds a few. Sunrise hike to the top of the city walls on Spring Equinox. Lots of making and thinking aboard the ship.</p></div></div>
     <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March 2026</div><h4>Dubrovnik, Croatia</h4><p>Sleeping off anchor watching limestone walls that meet the Adriatic. Swimming in the cold sea, walking through the old city, getting dramatic drone shots of the boat and dinghy rides into the old port. Ben's final port of call for his Residency.</p></div></div>
     <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">March – Mid-April 2026</div><h4>Montenegro</h4><p>Returned to the bay of mountains and still water. Watched the snow capped mountains melt away. Anchored next to quiet monasteries where the monk sang to gulls every sunset. Spring came into the present moment.</p></div></div>
-    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">Late April – Mid-June 2026</div><h4>Corfu & The Southern Islands, Greece</h4><p>Moved south through the Ionian islands. The Corinth Canal was closed for restoration, so we sailed around the far western edge of Greece's mainland. Anchored in many coves and around stunning islands. Hala hosted her nephew for a week in Mykonos. Spent a week in Crete. Sailed East.</p></div></div>
-    <div class="stop"><div class="stop-marker current">●</div><div class="stop-info"><div class="stop-date">June 4th 2026 <span class="status-badge badge-current">Now</span></div><h4>Turkey</h4><p>Moving south along the coast towards Rhodes. The heat of summer is in full glory. Open for applications.</p></div></div>
-    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">June 20th – 30th 2026</div><h4>Rhodes, Greece</h4><p>Full boat. No open applications for this stop.</p></div></div>
-    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">July 1st – 10th 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Sailing Westward — Athens, Corinth Canal & Ionian Islands</h4><p>Heading west through the heart of Greece. Open for applications.</p></div></div>
-    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">Mid-July – August 1st 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Sicilia, Malta, Sardegna & Corse</h4><p>Island hopping through the central Mediterranean. Open for applications.</p></div></div>
-    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">August 4th – 16th 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Menorca & Mallorca</h4><p>The Balearics. Open for applications.</p></div></div>
-    <div class="stop"><div class="stop-marker upcoming">→</div><div class="stop-info"><div class="stop-date">August – October 2026 <span class="status-badge badge-upcoming">Open</span></div><h4>Spain & Morocco</h4><p>The final arc of the season. Open for applications.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">Late April – Mid-June 2026</div><h4>Corfu & The Southern Islands, Greece</h4><p>Moved south through the Ionian islands. The Corinth Canal was closed for restoration, so we sailed around the far western edge of Greece's mainland. Anchored in many coves and around stunning islands. Hala hosted her nephew for a week in Mykonos. Spent a week in Crete. Sailed East. Hope came aboard and experienced many small Greek Islands.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">June 2026</div><h4>Turkey — South Coast</h4><p>Moving slowly south along the Turkish coast. Bodrum, Knidos, into the heat of summer. The sea flat and brilliant in every direction. Falling in love with Turkish cats and learning that Turkey is an expensive place to be on a boat.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">June 20th – 30th 2026</div><h4>Rhodes & the Dodecanese, Greece</h4><p>Full boat residency — Estelle and Matthew both joined here. Kos through Symi and Panormitis to Rhodes — ancient monuments, deep harbor coves, the southernmost edge of our Greece. Then west through Chalki, Tilos, the small islands.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">Late June 2026</div><h4>Astypalea, Koufonisia & the Long Sail West</h4><p>East to Astypalea. The Shipwreck of Olympia. Koufonisia. Then a long twenty-hour sail back west past Naxos and Paros to Palaia Fokaia. Back to Athens where Estelle disembarked. Then an epic sail through the Corinth Canal for Hala's birthday. We learned the complexities of how to enter a busy canal works.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">July 2026</div><h4>Gulf of Corinth & the Ionian Farewell</h4><p>Galaxidi, the Venetian port at Nafpaktos. The Blue Caves of Zakynthos. Out through Kefalonia — where we checked out of Greece for the last time. A fifty-hour crossing south to Sicily. Crew sleeping in shifts. Swimming in 3km deep ocean water. Residents getting to experience the magic of night sailing. Matthew spent hours alone in darkness on deck recording.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">July 2026</div><h4>Sicily & Malta</h4><p>Said goodbye to Matthew. The day after Annie joined in Syracuse and Michael in Malta. Sailed from Syracuse to Marzamemi. Sailing into Valletta, one of Ketil's longest held dreams. We heard "the most fortified city in all of Europe" uttered from his mouth more than once. Back to Sicily saying goodbye to Annie & Michael. Sailing north through the Strait of Messina to Milazzo. Hosting Ketil's sister and kids for a sail by Stromboli, Lipari and its castle, the full Aeolian arc. Cefalu, Palermo. West to Marettimo at the very tip of Sicily.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">Late July 2026</div><h4>Sardinia</h4><p>Sylvia joined here. A crossing east to Solanas. South past the Madonna del Naufrago underwater statue, Stagno di Notteri with its flamingos, into Cagliari. After saying goodbye to Sylvia, Hala and Ketil went from Carloforte on the island of San Pietro towards Spain, a thirty-hour crossing west. Just the two, sleeping in shifts and thankful the sea was calm and the wind was to our back.</p></div></div>
+    <div class="stop"><div class="stop-marker past">✓</div><div class="stop-info"><div class="stop-date">August 2026</div><h4>Mallorca, the Balearics</h4><p>Karlis, Toúchef and Charles came aboard. Palma. Port d'Andratx. The narrow inlet at Cala Deia. Watched the solar eclipse from the water at Cova de Sa Sal on August 12th 🌑. Around the island east — Portocolom, Cala Magraner, Canyamel, Port d'Alcudia. A crossing north to end the season.</p></div></div>
+    <div class="stop"><div class="stop-marker current">●</div><div class="stop-info"><div class="stop-date">August 21st 2026 <span class="status-badge badge-current">Dry Docked</span></div><h4>Barcelona, Spain</h4><p>Portfolio rests in Barcelona. The boat is out of the water. Six months, one sea, countless ports. Portfolio sailed over 4,250 nautical miles. Averaging 5 hours of sailing everyday for 6 months. We'll be back.</p></div></div>
   </div>
 </section>
 
@@ -102,67 +102,105 @@
 </footer>
 
 <script>
-  const map = L.map('map', { center: [37.5, 14.5], zoom: 5, minZoom: 4, maxZoom: 10, scrollWheelZoom: false });
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>', subdomains: 'abcd', maxZoom: 20 }).addTo(map);
+  const map = L.map('map', { center: [38.5, 12.0], zoom: 5, minZoom: 4, maxZoom: 10, scrollWheelZoom: false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', subdomains: 'abc', maxZoom: 20 }).addTo(map);
   const currentIcon = L.divIcon({ className: '', html: '<div style="width:20px;height:20px;border-radius:50%;background:#f47c68;border:3px solid #5c54c0;box-shadow:0 2px 8px rgba(0,0,0,0.35);"></div>', iconSize: [20,20], iconAnchor: [10,10] });
-  const plannedIcon = L.divIcon({ className: '', html: '<div style="width:14px;height:14px;border-radius:50%;background:#36bcc8;opacity:0.85;box-shadow:0 2px 6px rgba(0,0,0,0.25);"></div>', iconSize: [14,14], iconAnchor: [7,7] });
-  const pastIcon   = L.divIcon({ className: '', html: '<div style="width:12px;height:12px;border-radius:50%;background:#b8a890;border:2px solid #999;"></div>', iconSize: [12,12], iconAnchor: [6,6] });
+  const pastIcon = L.divIcon({ className: '', html: '<div style="width:12px;height:12px;border-radius:50%;background:#b8a890;border:2px solid #999;"></div>', iconSize: [12,12], iconAnchor: [6,6] });
   const stops = [
-    { latlng: [41.730, 12.232],  name: 'Rome, Italy',                      date: 'March 2026',               status: 'past',    desc: 'Where we began. The city of layers — ancient stone, living noise, and Portfolio resting on The Tiber River. Waiting to start our collective tale. Ketil is buzzing with the history of it all.' },
-    { latlng: [40.731, 13.900],  name: 'Isola d\'Ischia, Italy',           date: 'March 2026',               status: 'past',    desc: 'A volcanic island in the Tyrrhenian. We are in awe of the adventure, our future and the open waters. The boat is running smoothly and we are nesting. Looking at the old cities from this view is a gift.' },
-    { latlng: [40.627, 14.376],  name: 'Sorrento, Italy',                  date: 'March 2026',               status: 'past',    desc: 'Clifftop town above the Bay of Naples. The first time Hala ever saw a pod of dolphins 🐬! They swam and danced with the boat for a bit. A wild blessing for Portfolio\'s journey.' },
-    { latlng: [38.190, 15.550],  name: 'Night Crossing to Sicilia',        date: 'March 2026',               status: 'past',    desc: 'Stars low and close. The boat finding its way south in the dark. We got to see Stromboli erupting at night!! 🌋' },
-    { latlng: [38.256, 15.716],  name: 'Castello Ruffo di Scilla, Italy',  date: 'March 2026',               status: 'past',    desc: 'Ancient fortress at the tip of the boot. Waiting to pass through the Strait of Messina. We now have a new dinghy motor as well. Sad for the future buff rowing arms.' },
-    { latlng: [38.620, 15.840],  name: 'Canne, Italy',                     date: 'March 2026',               status: 'past',    desc: 'A brief pause along the Calabrian coast. Trying and failing to repair the water boiler, but hey we did laundry!' },
-    { latlng: [40.468, 19.487],  name: 'Vlorë, Albania',                   date: 'March 2026',               status: 'past',    desc: 'Where the Adriatic opens into the Ionian. Finally we exported the boat in time. Sleeping off anchor in a quiet bay for a few days. Ketil watching fish jump about the water. His mom texting us imploring him to catch fish for dinner. Hala making soup against her will, but damn does it taste good.' },
-    { latlng: [41.323, 19.441],  name: 'Durrës, Albania',                  date: 'March 2026',               status: 'past',    desc: 'Albania\'s oldest city, but feels like it is still being built. A massive shipping port. Ben, our first Residency Artist, boarded here for a week long residency!! We pick him up in Tiranë.' },
-    { latlng: [42.100, 18.900],  name: 'Off Anchor, Southern Montenegro',  date: 'March 2026',               status: 'past',    desc: 'Floating still in a sheltered bay. The mountains rising directly from the sea, unhurried and enormous.' },
-    { latlng: [42.424, 18.771],  name: 'Kotor, Montenegro',                date: 'March 2026',               status: 'past',    desc: 'A medieval walled city at the end of an inland sea. The walls climb the mountain. The cat population is legendary. Ben pets as many cats as he can and even holds a few. Sunrise hike to the top of the city walls on Spring Equinox. Lots of making and thinking aboard the ship.' },
-    { latlng: [42.650, 18.094],  name: 'Dubrovnik, Croatia',               date: 'March 2026',               status: 'past',    desc: 'Sleeping off anchor watching limestone walls that meet the Adriatic. Swimming in the cold sea, walking through the old city, dramatic drone shots of the boat and dinghy rides into the old port. Ben\'s final port of call for his Residency.' },
-    { latlng: [42.300, 18.850],  name: 'Montenegro',                       date: 'March – Mid-April 2026',   status: 'past',    desc: 'Returned to the bay of mountains and still water. Watched the snow capped mountains melt away. Anchored next to quiet monasteries where the monk sang to gulls every sunset. Spring came into the present moment.' },
-    { latlng: [39.621, 19.921],  name: 'Corfu & The Southern Islands, Greece', date: 'Late April – Mid-June 2026', status: 'past', desc: 'Moved south through the Ionian islands. The Corinth Canal was closed for restoration, so we sailed around the far western edge of Greece\'s mainland. Anchored in many coves and around stunning islands. Hala hosted her nephew for a week in Mykonos. Spent a week in Crete. Sailed East.' },
-    { latlng: [39.195, 20.169],  name: 'Paxos, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [39.130, 20.188],  name: 'Anti Paxos, Greece',               date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [38.714, 20.643],  name: 'Lefkada, Greece',                  date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.640, 21.315],  name: 'Paralia, Greece',                  date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [36.916, 21.694],  name: 'Pilos, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [36.500, 22.950],  name: 'Elafonisos, Greece',               date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.345, 23.470],  name: 'Idra, Greece',                     date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.500, 23.453],  name: 'Poros, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.570, 23.383],  name: 'Moni, Greece',                     date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.741, 23.425],  name: 'Aegina, Greece',                   date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.945, 23.648],  name: 'Athens, Greece',                   date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.650, 24.340],  name: 'Kea, Greece',                      date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.383, 24.417],  name: 'Kithnos, Greece',                  date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.444, 24.921],  name: 'Siros, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.533, 25.167],  name: 'Tinos, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.444, 25.328],  name: 'Mikonos, Greece',                  date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.395, 25.267],  name: 'Dilos, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.033, 25.067],  name: 'Antiparos, Greece',                date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [36.967, 24.700],  name: 'Sifnos, Greece',                   date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [36.700, 24.440],  name: 'Milos, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [35.513, 24.018],  name: 'Chania, Crete, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [36.393, 25.461],  name: 'Santorini, Greece',                date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.750, 26.833],  name: 'Samos, Greece',                    date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.858, 27.259],  name: 'Kusadasi, Turkey',                 date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [36.880, 27.380],  name: 'Catalada, Turkey',                 date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.034, 27.430],  name: 'Bodrum, Turkey',                   date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.050, 27.565],  name: 'Orak Adasi, Turkey',               date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.150, 27.750],  name: 'Cokertme, Turkey',                 date: '2026',                    status: 'past',    desc: '' },
-    { latlng: [37.000, 27.500],  name: 'Turkey',                           date: 'June 4th 2026',           status: 'current', desc: 'Moving south along the coast towards Rhodes. The heat of summer is in full glory. Open for applications.' },
-    { latlng: [36.434, 28.217],  name: 'Rhodes, Greece',                   date: 'June 20th – 30th 2026',   status: 'planned', desc: 'Full boat. No open applications for this stop.' },
-    { latlng: [37.973, 23.725],  name: 'Sailing Westward — Athens, Corinth Canal & Ionian Islands', date: 'July 1st – 10th 2026', status: 'planned', desc: 'Heading west through the heart of Greece. Open for applications.' },
-    { latlng: [37.600, 14.015],  name: 'Sicilia',                          date: 'Mid-July – August 1st 2026', status: 'planned', desc: 'Island hopping through the central Mediterranean. Open for applications.' },
-    { latlng: [35.900, 14.514],  name: 'Malta',                            date: 'Mid-July – August 1st 2026', status: 'planned', desc: 'Island hopping through the central Mediterranean. Open for applications.' },
-    { latlng: [40.120,  9.013],  name: 'Sardegna',                         date: 'Mid-July – August 1st 2026', status: 'planned', desc: 'Island hopping through the central Mediterranean. Open for applications.' },
-    { latlng: [42.150,  9.100],  name: 'Corse',                            date: 'Mid-July – August 1st 2026', status: 'planned', desc: 'Island hopping through the central Mediterranean. Open for applications.' },
-    { latlng: [39.700,  3.100],  name: 'Menorca & Mallorca',               date: 'August 4th – 16th 2026',  status: 'planned', desc: 'The Balearics. Open for applications.' },
-    { latlng: [36.000, -5.600],  name: 'Spain & Morocco',                  date: 'August – October 2026',   status: 'planned', desc: 'The final arc of the season. Open for applications.' },
+    { latlng: [41.730, 12.232], name: 'Rome, Italy', date: 'March 2026', status: 'past', desc: 'Where we began. The city of layers — ancient stone, living noise, and Portfolio resting on The Tiber River.' },
+    { latlng: [40.731, 13.900], name: 'Isola d\'Ischia, Italy', date: 'March 2026', status: 'past', desc: 'A volcanic island in the Tyrrhenian. We are in awe of the adventure, our future and the open waters.' },
+    { latlng: [40.627, 14.376], name: 'Sorrento, Italy', date: 'March 2026', status: 'past', desc: 'Clifftop town above the Bay of Naples. The first time Hala ever saw a pod of dolphins 🐬!' },
+    { latlng: [38.190, 15.550], name: 'Night Crossing to Sicilia', date: 'March 2026', status: 'past', desc: 'Stars low and close. The boat finding its way south in the dark. Stromboli erupting at night!! 🌋' },
+    { latlng: [38.256, 15.716], name: 'Castello Ruffo di Scilla, Italy', date: 'March 2026', status: 'past', desc: 'Ancient fortress at the tip of the boot. Waiting to pass through the Strait of Messina.' },
+    { latlng: [38.620, 15.840], name: 'Canne, Italy', date: 'March 2026', status: 'past', desc: 'A brief pause along the Calabrian coast.' },
+    { latlng: [40.468, 19.487], name: 'Vlorë, Albania', date: 'March 2026', status: 'past', desc: 'Where the Adriatic opens into the Ionian. Sleeping off anchor in a quiet bay for a few days.' },
+    { latlng: [41.323, 19.441], name: 'Durrës, Albania', date: 'March 2026', status: 'past', desc: 'Albania\'s oldest city. Ben, our first Residency Artist, boarded Portfolio here for a week long residency!!' },
+    { latlng: [42.100, 18.900], name: 'Off Anchor, Southern Montenegro', date: 'March 2026', status: 'past', desc: 'Floating still in a sheltered bay. The mountains rising directly from the sea, unhurried and enormous.' },
+    { latlng: [42.424, 18.771], name: 'Kotor, Montenegro', date: 'March 2026', status: 'past', desc: 'A medieval walled city at the end of an inland sea. Sunrise hike to the top of the city walls on Spring Equinox.' },
+    { latlng: [42.650, 18.094], name: 'Dubrovnik, Croatia', date: 'March 2026', status: 'past', desc: 'Sleeping off anchor watching limestone walls that meet the Adriatic. Ben\'s final port of call for his Residency.' },
+    { latlng: [42.300, 18.850], name: 'Montenegro', date: 'March – Mid-April 2026', status: 'past', desc: 'Returned to the bay of mountains and still water. Spring came into the present moment.' },
+    { latlng: [39.621, 19.921], name: 'Corfu & The Southern Islands, Greece', date: 'Late April – Mid-June 2026', status: 'past', desc: 'Moved south through the Ionian islands. The Corinth Canal was closed for restoration, so we sailed around the far western edge of Greece\'s mainland.' },
+    { latlng: [39.195, 20.169], name: 'Paxos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [39.130, 20.188], name: 'Anti Paxos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [38.714, 20.643], name: 'Lefkada, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.640, 21.315], name: 'Paralia, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.916, 21.694], name: 'Pilos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.500, 22.950], name: 'Elafonisos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.345, 23.470], name: 'Idra, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.500, 23.453], name: 'Poros, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.570, 23.383], name: 'Moni, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.741, 23.425], name: 'Aegina, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.945, 23.648], name: 'Athens, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.650, 24.340], name: 'Kea, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.383, 24.417], name: 'Kithnos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.444, 24.921], name: 'Siros, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.533, 25.167], name: 'Tinos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.444, 25.328], name: 'Mikonos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.395, 25.267], name: 'Dilos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.033, 25.067], name: 'Antiparos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.967, 24.700], name: 'Sifnos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.700, 24.440], name: 'Milos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [35.513, 24.018], name: 'Chania, Crete, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.393, 25.461], name: 'Santorini, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.750, 26.833], name: 'Samos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.858, 27.259], name: 'Kusadasi, Turkey', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.880, 27.380], name: 'Catalada, Turkey', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.034, 27.430], name: 'Bodrum, Turkey', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.050, 27.565], name: 'Orak Adasi, Turkey', date: '2026', status: 'past', desc: '' },
+    { latlng: [37.150, 27.750], name: 'Cokertme, Turkey', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.686, 27.374], name: 'Knidos, Turkey', date: 'June 2026', status: 'past', desc: '' },
+    { latlng: [36.894, 27.288], name: 'Kos, Greece', date: 'June 2026', status: 'past', desc: '' },
+    { latlng: [36.617, 27.838], name: 'Symi, Greece', date: 'June 2026', status: 'past', desc: '' },
+    { latlng: [36.540, 27.830], name: 'Panormitis, Symi', date: 'June 2026', status: 'past', desc: '' },
+    { latlng: [36.434, 28.217], name: 'Rhodes, Greece', date: 'June 20th – 30th 2026', status: 'past', desc: 'Full boat residency. Ancient citadel, deep harbor coves.' },
+    { latlng: [36.188, 28.157], name: 'Ferakalos Castle, Rhodes', date: 'June 2026', status: 'past', desc: '' },
+    { latlng: [36.091, 28.086], name: 'Lindos, Rhodes', date: 'June 2026', status: 'past', desc: '' },
+    { latlng: [36.220, 27.601], name: 'Chalki, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.342, 27.878], name: 'Kamiros Skala, Rhodes', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.267, 27.727], name: 'Alimia, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.432, 27.382], name: 'Tilos, Greece', date: '2026', status: 'past', desc: '' },
+    { latlng: [36.549, 26.364], name: 'Astypalea, Greece', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [36.450, 26.200], name: 'Shipwreck of Olympia', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [36.933, 25.617], name: 'Koufonisia, Greece', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [37.710, 23.868], name: 'Palaia Fokaia, Greece', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [37.914, 22.995], name: 'Isthmia, Greece', date: 'July 7th 2026', status: 'past', desc: 'Eastern entrance of the Corinth Canal. Through on July 7th.' },
+    { latlng: [38.371, 22.380], name: 'Galaxidi, Greece', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [38.394, 21.832], name: 'Nafpaktos, Greece', date: 'July 2026', status: 'past', desc: 'The Venetian port.' },
+    { latlng: [38.534, 21.075], name: 'Agios Nikolaos Beach, Greece', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [37.887, 20.660], name: 'Blue Caves, Zakynthos', date: 'July 2026', status: 'past', desc: '' },
+    { latlng: [38.174, 20.490], name: 'Argostoli, Kefalonia', date: 'July 2026', status: 'past', desc: 'Checked out of Greece. A fifty-hour crossing south to Italy.' },
+    { latlng: [37.065, 15.287], name: 'Syracuse, Italy', date: 'August 2026', status: 'past', desc: 'Arrival after a fifty-hour crossing from Greece.' },
+    { latlng: [36.747, 15.136], name: 'Marzamemi, Sicily', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [35.900, 14.514], name: 'Valletta, Malta', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [36.011, 14.336], name: 'Blue Lagoon, Comino, Malta', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [36.043, 14.191], name: 'Dwejra Inland Sea, Gozo', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [37.852, 15.289], name: 'Taormina, Sicily', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [38.219, 15.240], name: 'Milazzo, Sicily', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [38.789, 15.213], name: 'Stromboli', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [38.467, 14.956], name: 'Lipari Castle', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [38.166, 14.741], name: 'Capo d\'Orlando, Sicily', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [37.999, 14.023], name: 'Cefalu, Sicily', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [38.115, 13.361], name: 'Palermo, Sicily', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [37.972, 12.061], name: 'Isola di Marettimo, Sicily', date: 'August 2026', status: 'past', desc: 'The westernmost point of Sicily.' },
+    { latlng: [39.210,  9.524], name: 'Solanas, Sardinia', date: 'Late July 2026', status: 'past', desc: '' },
+    { latlng: [38.985,  9.558], name: 'Madonna del Naufrago, Sardinia', date: 'Late July 2026', status: 'past', desc: 'The submerged Madonna statue off Villasimius.' },
+    { latlng: [39.107,  9.525], name: 'Stagno di Notteri, Sardinia', date: 'Late July 2026', status: 'past', desc: 'Flamingo lagoon.' },
+    { latlng: [39.216,  9.113], name: 'Cagliari, Sardinia', date: 'Late July 2026', status: 'past', desc: '' },
+    { latlng: [39.137,  8.318], name: 'Carloforte, Sardinia', date: 'August 2026', status: 'past', desc: 'Island of San Pietro. Last stop before crossing west.' },
+    { latlng: [39.569,  2.650], name: 'Palma, Mallorca', date: 'August 8th 2026', status: 'past', desc: 'Arrival after a thirty-hour crossing from Sardinia.' },
+    { latlng: [39.540,  2.387], name: 'Port d\'Andratx, Mallorca', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [39.749,  2.638], name: 'Cala Deia, Mallorca', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [39.468,  2.520], name: 'Cova de Sa Sal, Mallorca', date: 'August 12th 2026', status: 'past', desc: 'Watched the solar eclipse from the water. 🌑' },
+    { latlng: [39.519,  3.258], name: 'Portocolom, Mallorca', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [39.544,  3.335], name: 'Cala Magraner, Mallorca', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [39.704,  3.442], name: 'Canyamel, Mallorca', date: 'August 2026', status: 'past', desc: '' },
+    { latlng: [39.858,  3.130], name: 'Port d\'Alcudia, Mallorca', date: 'August 2026', status: 'past', desc: 'Final anchorage before crossing north to the mainland.' },
+    { latlng: [41.383,  2.183], name: 'Barcelona, Spain', date: 'August 21st 2026', status: 'current', desc: 'Portfolio is dry docked for the season. After a full Mediterranean arc — Turkey, the Dodecanese, Greece, Malta, Sicily, Sardinia, and the Balearics. We rest in Barcelona. Until next season.' },
   ];
   L.polyline(stops.map(s => s.latlng), { color: '#36bcc8', weight: 2, opacity: 0.45, dashArray: '6 6' }).addTo(map);
   stops.forEach(stop => {
-    const icon = stop.status === 'current' ? currentIcon : stop.status === 'past' ? pastIcon : plannedIcon;
-    const badge = stop.status === 'current' ? '<span style="display:inline-block;background:#f47c68;color:#5c54c0;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;">Now</span>' : stop.status === 'planned' ? '<span style="display:inline-block;background:rgba(54,188,200,0.15);color:#36bcc8;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;">Upcoming</span>' : '';
+    const icon = stop.status === 'current' ? currentIcon : pastIcon;
+    const badge = stop.status === 'current' ? '<span style="display:inline-block;background:#f47c68;color:#5c54c0;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;">Now</span>' : '';
     L.marker(stop.latlng, { icon }).addTo(map).bindPopup(`<div class="popup-title">${stop.name} ${badge}</div><div class="popup-sub">${stop.date}</div><div class="popup-desc">${stop.desc}</div>`, { maxWidth: 260 });
   });
 </script>
